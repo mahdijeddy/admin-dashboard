@@ -15,6 +15,7 @@ interface dataType {
     title: string;
     isMoney: boolean;
     link: string;
+    count: number;
     icon: JSX.Element;
 }
 
@@ -23,12 +24,15 @@ const Widget: React.FC<propsType> = ({ type }) => {
         title: "",
         isMoney: false,
         link: "",
+        count: 0,
         icon: <div></div>,
     };
+
     const diff = 25;
     switch (type) {
         case "user":
             data = {
+                count: 120,
                 title: "USERS",
                 isMoney: false,
                 link: "See all users",
@@ -45,6 +49,7 @@ const Widget: React.FC<propsType> = ({ type }) => {
             break;
         case "order":
             data = {
+                count: 180,
                 title: "ORDERS",
                 isMoney: false,
                 link: "View all orders",
@@ -61,6 +66,7 @@ const Widget: React.FC<propsType> = ({ type }) => {
             break;
         case "earning":
             data = {
+                count: 420,
                 title: "EARNINGS",
                 isMoney: true,
                 link: "View net earnings",
@@ -74,6 +80,7 @@ const Widget: React.FC<propsType> = ({ type }) => {
             break;
         case "balance":
             data = {
+                count: 550,
                 title: "BALANCE",
                 isMoney: true,
                 link: "See details",
@@ -95,7 +102,10 @@ const Widget: React.FC<propsType> = ({ type }) => {
         <div className="widget">
             <div className="left">
                 <span className="title">{data.title}</span>
-                <span className="counter">{data.isMoney && "$"}150</span>
+                <span className="counter">
+                    {data.isMoney && "$"}
+                    {data.count}
+                </span>
                 <span className="link">{data.link}</span>
             </div>
             <div className="right">
