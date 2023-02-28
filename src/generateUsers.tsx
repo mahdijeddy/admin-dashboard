@@ -1,17 +1,18 @@
 import { faker } from "@faker-js/faker";
 import type { SexType } from "@faker-js/faker";
 // User interface for types
-interface Users {
-    _id: string;
-    avatar: string;
-    email: string;
-    customer: string;
-    lastName: string;
-    sex: SexType;
-    product: string;
-    Date: string;
-    amount: number;
-    status: string;
+export interface Users {
+    _id?: string;
+    avatar?: string;
+    email?: string;
+    customer?: string;
+    lastName?: string;
+    sex?: SexType;
+    product?: string;
+    Date?: string;
+    amount?: number;
+    status?: string;
+    statusUser?: string;
 }
 // id: 1143155,
 //       product: "Acer Nitro 5",
@@ -37,12 +38,14 @@ export function generateUsers(num: number = 1) {
         let sex = faker.name.sexType();
         let amount = Math.round(Math.random() * 100);
         let status = amount % 2 === 0 ? "Approved" : "Pending";
+        let statusUser = amount % 2 === 0 ? "active" : "passive";
 
         users.push({
             _id,
             avatar,
             email,
             amount,
+            statusUser,
             status,
             customer,
             lastName,

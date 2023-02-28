@@ -6,6 +6,7 @@ import "./home.scss";
 import Featured from "../../components/featured/Featured";
 import Chart from "../../components/chart/Chart";
 import Table from "../../components/table/Table";
+
 function Home() {
     return (
         <div className="home">
@@ -13,6 +14,7 @@ function Home() {
             <div className="homeContainer">
                 <Navbar />
                 <div className="widgets">
+                    {/* widget component reusabaled */}
                     <Widget type="user" />
                     <Widget type="order" />
                     <Widget type="earning" />
