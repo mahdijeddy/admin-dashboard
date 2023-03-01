@@ -28,10 +28,12 @@ function Sidebar() {
             <div className="center">
                 <ul>
                     <p className="title">MAIN</p>
-                    <li>
-                        <LineStyle className="icon" />
-                        <span>Dashboard</span>
-                    </li>
+                    <Link to="/" style={{ textDecoration: "none" }}>
+                        <li>
+                            <LineStyle className="icon" />
+                            <span>Dashboard</span>
+                        </li>
+                    </Link>
                     <p className="title">LISTS</p>
                     <Link to="/users" style={{ textDecoration: "none" }}>
                         <li>
